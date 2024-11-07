@@ -6,11 +6,42 @@ disjuction = "v"
 implies = ">"
 equality = "="
 
-test = "(A.B)vC"
+argument = "((~A.B)vC)>(D=~F)"
 
-letters=[]
-for letter in test:
+#get variables
+variables=[]
+for letter in argument:
     if letter in string.ascii_uppercase:
-        letters.append(letter)
+        variables.append(letter)
 
-print(letters)
+#get negations
+negations = []
+for i in range(len(argument)):
+    if argument[i] == negation:
+        negations.append(argument[i+1])
+
+print("Variables: ",end='')
+print(variables)
+
+print("Negations: ",end='')
+print(negations)
+
+
+
+
+
+#make table
+'''
++---+---+----+---+---
+| A | B | ~A |
++---+---+----+
+| T | T |  F |
++---+---+----+
+| T | F |
++---+---+---
+| F | T |
++---+---+---
+| F | F |
++---+---+---
+
+'''
